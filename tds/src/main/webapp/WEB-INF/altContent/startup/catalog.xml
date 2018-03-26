@@ -9,10 +9,6 @@
   <service name="all" base="" serviceType="compound">
     <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
     <service name="dap4" serviceType="DAP4" base="/thredds/dap4/" />
-    <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
-    <!--service name="wcs" serviceType="WCS" base="/thredds/wcs/" /-->
-    <!--service name="wms" serviceType="WMS" base="/thredds/wms/" /-->
-    <!--service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/" /-->
   </service>
 
   <service name="dap" base="" serviceType="compound">
@@ -20,34 +16,12 @@
     <service name="dap4" serviceType="DAP4" base="/thredds/dap4/" />
   </service>
 
-  <datasetRoot path="test" location="content/testdata/" />
-
-  <dataset name="Test Single Dataset" ID="testDataset"
-           serviceName="dap"  urlPath="test/testData.nc" dataType="Grid"/>
-
-  <dataset name="Test Single Dataset 2" ID="testDataset2"
-           serviceName="odap" urlPath="test/testData2.grib2" dataType="Grid"/>
-
-  <datasetScan name="Test all files in a directory" ID="testDatasetScan"
-               path="testAll" location="content/testdata">
-    <metadata inherited="true">
-      <serviceName>all</serviceName>
-      <dataType>Grid</dataType>
-    </metadata>
-
+  <datasetScan name="Data From LAS" path="las" location="./data" serviceName="odap">
     <filter>
-      <include wildcard="*eta_211.nc"/>
-      <include wildcard="testgrid*.nc"/>
+      <include wildcard="*.nc"/>
+      <include wildcard="*.fds"/>
+      <include wildcard="*.jnl"/>
     </filter>
-  </datasetScan>
-
-  <catalogRef xlink:title="Test Enhanced Catalog" xlink:href="enhancedCatalog.xml" name=""/>
-
-  <datasetScan name="Uploaded Files" ID="upload"
-                     location="${tds.upload.dir}" path="upload/">
-	    <metadata inherited="true">
-	      <serviceName>all</serviceName>
-	    </metadata>
   </datasetScan>
 
 </catalog>

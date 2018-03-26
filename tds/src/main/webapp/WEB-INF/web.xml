@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <display-name>THREDDS Data Server</display-name>
+  <display-name>Ferret-THREDDS Data Server</display-name>
   <!-- Provide the context path at init time (otherwise, not available till a request is made). -->
   <!-- LOOK remove this -->
   <context-param>
     <param-name>ContextPath</param-name>
-    <param-value>thredds</param-value>
+    <param-value>ftds</param-value>
   </context-param>
 
   <description>THREDDS Data Server</description>

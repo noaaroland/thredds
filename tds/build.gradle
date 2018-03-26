@@ -178,7 +178,7 @@ war {
 // This will be used by both :tds and :it.
 ext.grettyConfig = {
     httpPort = 8081
-    contextPath = '/thredds'
+    contextPath = '/ftds'
 
     File testResourcesDir = Iterables.getOnlyElement(sourceSets.test.resources.srcDirs)
 

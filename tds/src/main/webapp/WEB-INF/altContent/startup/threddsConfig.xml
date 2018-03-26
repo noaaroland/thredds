@@ -4,9 +4,13 @@
   <!-- all options are commented out in standard install - meaning use default values -->
   <!-- see http://www.unidata.ucar.edu/software/thredds/current/tds/reference/ThreddsConfigXMLFile.html -->
   <serverInformation>
-    <name>Initial TDS Installation (please change threddsConfig.xml)</name>
-    <logoUrl>/thredds/threddsIcon.png</logoUrl>
-    <logoAltText>Initial TDS Installation</logoAltText>
+    <name>Ferret-THREDDS Data Server for computations in the Live Access Server</name>
+    <logoUrl>/ftds/threddsIcon.png</logoUrl>
+    <logoAltText>F-TDS Configured for LAS</logoAltText>
+
+    <nj22Config>
+       <ioServiceProvider class="pmel.sdig.ftds.FerretIOServiceProvider"/>
+    </nj22Config>
 
     <abstract>Scientific Data</abstract>
     <keywords>meteorology, atmosphere, climate, ocean, earth science</keywords>
