@@ -6,17 +6,12 @@
          xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0
            http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.6.xsd">
 
-  <service name="all" base="" serviceType="compound">
-    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
-    <service name="dap4" serviceType="DAP4" base="/thredds/dap4/" />
-  </service>
-
   <service name="dap" base="" serviceType="compound">
-    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
-    <service name="dap4" serviceType="DAP4" base="/thredds/dap4/" />
+    <service name="odap" serviceType="OpenDAP" base="/ftds/dodsC/" />
+    <service name="dap4" serviceType="DAP4" base="/ftds/dap4/" />
   </service>
 
-  <datasetScan name="Data From LAS" path="las" location="./data" serviceName="odap">
+  <datasetScan name="Data From LAS" path="las" location="/home/rhs/data" serviceName="dap">
     <filter>
       <include wildcard="*.nc"/>
       <include wildcard="*.fds"/>
